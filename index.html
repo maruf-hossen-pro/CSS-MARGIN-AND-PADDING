@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Margin &amp; Padding — Beginner's Guide</title>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HERO
+     ══════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-eyebrow">CSS Beginner's Guide</div>
+  <h1><span class="m">Margin</span> &amp; <span class="p">Padding</span></h1>
+  <p class="hero-desc">Everything you need to know about spacing in CSS — explained simply with live visual examples.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">📦 Box Model</span>
+    <span class="hero-tag">↔ Margin</span>
+    <span class="hero-tag">↕ Padding</span>
+    <span class="hero-tag">🔢 Shorthand</span>
+    <span class="hero-tag">⚠ Gotchas</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 1 — THE BOX MODEL
+     ══════════════════════════════════════ -->
+<section>
+  <div class="container">
+
+    <div class="section-label">01 — Foundation</div>
+    <h2>The CSS Box Model</h2>
+    <p>Every HTML element is a rectangular box. CSS wraps that box in four layers. Understanding these layers is the key to mastering layout and spacing.</p>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#fff0f2; border: 2px dashed #e8435a;"></div>
+        Margin (outside space)
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#fffbeb; border: 2px solid #d97706;"></div>
+        Border
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#f0fdf4; border: 2px dashed #16a34a;"></div>
+        Padding (inside space)
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#5b4df5;"></div>
+        Content
+      </div>
+    </div>
+
+    <!-- Box Model Diagram -->
+    <div class="box-model-wrap">
+      <div class="box-model">
+        <div class="bm-margin">
+          <span class="bm-margin-label">margin</span>
+          <div class="bm-border">
+            <span class="bm-border-label">border</span>
+            <div class="bm-padding">
+              <span class="bm-padding-label">padding</span>
+              <div class="bm-content">Content lives here</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>🧠 Quick Rule to Remember</strong>
+      <p>
+        <strong style="color:#e8435a;">Margin</strong> = space <em>outside</em> the element — pushes other elements away.<br>
+        <strong style="color:#16a34a;">Padding</strong> = space <em>inside</em> the element — pushes content away from the edges.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 2 — MARGIN
+     ══════════════════════════════════════ -->
+<section>
+  <div class="container">
+
+    <div class="section-label">02 — Margin</div>
+    <h2>What is <span style="color:#e8435a;">Margin</span>?</h2>
+    <p>Margin creates transparent (invisible) space around an element's border. It pushes neighbouring elements away. The element's background colour does <strong>not</strong> fill the margin area — it stays transparent.</p>
+
+<pre><span class="cmt">/* Apply margin to all four sides */</span>
+<span class="kw">.box</span> {
+  <span class="prop">margin</span>: <span class="val">20px</span>;
+}
+
+<span class="cmt">/* Or control each side separately */</span>
+<span class="kw">.box</span> {
+  <span class="prop">margin-top</span>:    <span class="val">10px</span>;
+  <span class="prop">margin-right</span>:  <span class="val">20px</span>;
+  <span class="prop">margin-bottom</span>: <span class="val">10px</span>;
+  <span class="prop">margin-left</span>:   <span class="val">20px</span>;
+}</pre>
+
+    <div class="demo-grid">
+      <!-- margin 0 -->
+      <div class="demo-card">
+        <h3>margin: 0 — no space</h3>
+        <div class="live-area">
+          <div class="ex-box ex-margin-0">Box</div>
+        </div>
+<pre><span class="prop">margin</span>: <span class="val">0</span>;</pre>
+      </div>
+
+      <!-- margin 16px -->
+      <div class="demo-card">
+        <h3>margin: 16px — small space</h3>
+        <div class="live-area">
+          <div class="ex-box ex-margin-16">Box</div>
+        </div>
+<pre><span class="prop">margin</span>: <span class="val">16px</span>;</pre>
+      </div>
+
+      <!-- margin 32px -->
+      <div class="demo-card">
+        <h3>margin: 32px — large space</h3>
+        <div class="live-area">
+          <div class="ex-box ex-margin-32">Box</div>
+        </div>
+<pre><span class="prop">margin</span>: <span class="val">32px</span>;</pre>
+      </div>
+
+      <!-- margin auto -->
+      <div class="demo-card">
+        <h3>margin: auto — centering!</h3>
+        <div class="live-area-block">
+          <div class="ma-box">I am centered!</div>
+        </div>
+<pre><span class="prop">width</span>:  <span class="val">55%</span>;
+<span class="prop">margin</span>: <span class="val">0 auto</span>;</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 3 — PADDING
+     ══════════════════════════════════════ -->
+<section>
+  <div class="container">
+
+    <div class="section-label">03 — Padding</div>
+    <h2>What is <span style="color:#16a34a;">Padding</span>?</h2>
+    <p>Padding creates space between an element's content and its border. Unlike margin, the padding area <strong>is</strong> filled by the element's background colour. More padding = more "breathing room" inside the box.</p>
+
+<pre><span class="cmt">/* Apply padding to all four sides */</span>
+<span class="kw">.box</span> {
+  <span class="prop">padding</span>: <span class="val">20px</span>;
+}
+
+<span class="cmt">/* Or control each side separately */</span>
+<span class="kw">.box</span> {
+  <span class="prop">padding-top</span>:    <span class="val">10px</span>;
+  <span class="prop">padding-right</span>:  <span class="val">20px</span>;
+  <span class="prop">padding-bottom</span>: <span class="val">10px</span>;
+  <span class="prop">padding-left</span>:   <span class="val">20px</span>;
+}</pre>
+
+    <div class="demo-grid">
+      <!-- padding 0 -->
+      <div class="demo-card">
+        <h3>padding: 0 — no inner space</h3>
+        <div class="live-area">
+          <div class="ex-pad-base ex-pad-0">Text</div>
+        </div>
+<pre><span class="prop">padding</span>: <span class="val">0</span>;</pre>
+      </div>
+
+      <!-- padding 16px -->
+      <div class="demo-card">
+        <h3>padding: 16px — comfortable</h3>
+        <div class="live-area">
+          <div class="ex-pad-base ex-pad-16">Text</div>
+        </div>
+<pre><span class="prop">padding</span>: <span class="val">16px</span>;</pre>
+      </div>
+
+      <!-- padding 32px -->
+      <div class="demo-card">
+        <h3>padding: 32px — spacious</h3>
+        <div class="live-area">
+          <div class="ex-pad-base ex-pad-32">Text</div>
+        </div>
+<pre><span class="prop">padding</span>: <span class="val">32px</span>;</pre>
+      </div>
+
+      <!-- mixed padding -->
+      <div class="demo-card">
+        <h3>Mixed padding sides</h3>
+        <div class="live-area">
+          <div style="background:#16a34a;color:#fff;font-weight:700;font-size:.8rem;border-radius:6px;padding-top:30px;padding-right:12px;padding-bottom:6px;padding-left:12px;">Tall top!</div>
+        </div>
+<pre><span class="prop">padding-top</span>:    <span class="val">30px</span>;
+<span class="prop">padding-right</span>:  <span class="val">12px</span>;
+<span class="prop">padding-bottom</span>: <span class="val">6px</span>;
+<span class="prop">padding-left</span>:   <span class="val">12px</span>;</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 4 — INDIVIDUAL SIDES
+     ══════════════════════════════════════ -->
+<section>
+  <div class="container">
+
+    <div class="section-label">04 — Individual Sides</div>
+    <h2>Targeting Each Side</h2>
+    <p>Both <code>margin</code> and <code>padding</code> let you control all four sides independently. The diagrams below show padding applied to a single side at a time.</p>
+
+    <div class="sides-grid">
+      <div class="side-card">
+        <div class="pill">padding-top</div>
+        <p>Adds space above the content.</p>
+        <div class="side-demo-wrap">
+          <div class="side-demo-box s-top">Content</div>
+        </div>
+      </div>
+      <div class="side-card">
+        <div class="pill">padding-right</div>
+        <p>Adds space to the right.</p>
+        <div class="side-demo-wrap">
+          <div class="side-demo-box s-right">Content</div>
+        </div>
+      </div>
+      <div class="side-card">
+        <div class="pill">padding-bottom</div>
+        <p>Adds space below the content.</p>
+        <div class="side-demo-wrap">
+          <div class="side-demo-box s-bottom">Content</div>
+        </div>
+      </div>
+      <div class="side-card">
+        <div class="pill">padding-left</div>
+        <p>Adds space to the left.</p>
+        <div class="side-demo-wrap">
+          <div class="side-demo-box s-left">Content</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 5 — SHORTHAND
+     ══════════════════════════════════════ -->
+<section>
+  <div class="container">
+
+    <div class="section-label">05 — Shorthand</div>
+    <h2>The Shorthand Values</h2>
+    <p>Instead of writing four lines, use shorthand. Values are read <strong>clockwise from the top</strong>: Top → Right → Bottom → Left. A helpful memory trick: <strong>TR ou BL e</strong>.</p>
+
+    <table class="shorthand-table">
+      <thead>
+        <tr>
+          <th>Number of Values</th>
+          <th>Example</th>
+          <th>What it means</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1 value</strong></td>
+          <td><code>margin: 20px</code></td>
+          <td class="desc">All four sides = 20px</td>
+        </tr>
+        <tr>
+          <td><strong>2 values</strong></td>
+          <td><code>margin: 10px 20px</code></td>
+          <td class="desc">Top &amp; Bottom = 10px &nbsp;|&nbsp; Left &amp; Right = 20px</td>
+        </tr>
+        <tr>
+          <td><strong>3 values</strong></td>
+          <td><code>margin: 10px 20px 30px</code></td>
+          <td class="desc">Top = 10px &nbsp;|&nbsp; Left &amp; Right = 20px &nbsp;|&nbsp; Bottom = 30px</td>
+        </tr>
+        <tr>
+          <td><strong>4 values</strong></td>
+          <td><code>margin: 10px 20px 30px 40px</code></td>
+          <td class="desc">Top=10 &nbsp; Right=20 &nbsp; Bottom=30 &nbsp; Left=40 (clockwise)</td>
+        </tr>
+      </tbody>
+    </table>
+
+<pre><span class="cmt">/* The same shorthand rule applies to padding */</span>
+<span class="kw">.card</span> {
+  <span class="prop">padding</span>: <span class="val">8px 16px</span>;    <span class="cmt">/* 8px top/bottom, 16px left/right */</span>
+  <span class="prop">margin</span>:  <span class="val">24px 0</span>;     <span class="cmt">/* 24px top/bottom, 0 left/right  */</span>
+}</pre>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 6 — UNITS
+     ══════════════════════════════════════ -->
+<section>
+  <div class="container">
+
+    <div class="section-label">06 — Units</div>
+    <h2>Which Units Can You Use?</h2>
+    <p>Margin and padding accept many CSS units. Here are the most common ones you'll encounter as a beginner.</p>
+
+<pre><span class="kw">.box</span> {
+  <span class="prop">margin</span>:  <span class="val">20px</span>;      <span class="cmt">/* px   → fixed pixels (most common) */</span>
+  <span class="prop">padding</span>: <span class="val">1.5rem</span>;   <span class="cmt">/* rem  → relative to root font-size (usually 16px) */</span>
+  <span class="prop">margin</span>:  <span class="val">2em</span>;      <span class="cmt">/* em   → relative to element's own font-size */</span>
+  <span class="prop">padding</span>: <span class="val">5%</span>;       <span class="cmt">/* %    → percentage of the parent's width */</span>
+  <span class="prop">margin</span>:  <span class="val">auto</span>;     <span class="cmt">/* auto → browser calculates (great for centering) */</span>
+  <span class="prop">margin</span>:  <span class="val">0</span>;        <span class="cmt">/* 0    → no unit needed when value is zero */</span>
+}</pre>
+
+    <div class="callout">
+      <strong>💡 Which unit should I use?</strong>
+      <p>Use <strong>px</strong> for precise, fixed spacing. Use <strong>rem</strong> for scalable spacing that respects user font settings. Use <strong>%</strong> in flexible, responsive layouts. For most beginners, <strong>px</strong> and <strong>rem</strong> are all you need.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 7 — MARGIN AUTO
+     ══════════════════════════════════════ -->
+<section>
+  <div class="container">
+
+    <div class="section-label">07 — margin: auto</div>
+    <h2>Centering with <code>margin: auto</code></h2>
+    <p>Setting <code>margin: 0 auto</code> on a block element that has a defined width will <strong>center it horizontally</strong> on the page. This is one of the most commonly used layout techniques in CSS!</p>
+
+    <div class="margin-auto-demo">
+      <div class="ma-box">I am centered! 🎯</div>
+    </div>
+
+<pre><span class="kw">.centered-box</span> {
+  <span class="prop">width</span>:  <span class="val">55%</span>;     <span class="cmt">/* Must have a width for auto to work! */</span>
+  <span class="prop">margin</span>: <span class="val">0 auto</span>;  <span class="cmt">/* top/bottom = 0, left/right = auto  */</span>
+}</pre>
+
+    <div class="callout">
+      <strong>🔑 Remember</strong>
+      <p><code>margin: auto</code> only works for horizontal centering on block-level elements. The element <strong>must have a defined width</strong> — otherwise it takes up the full width and there is nothing to center.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 8 — MARGIN COLLAPSE
+     ══════════════════════════════════════ -->
+<section>
+  <div class="container">
+
+    <div class="section-label">08 — Gotcha!</div>
+    <h2>Margin Collapse</h2>
+    <p>When two <strong>vertical</strong> margins (top and bottom) touch, they <strong>collapse</strong> into one — only the <em>larger</em> of the two is used. This surprises almost every beginner!</p>
+
+<pre><span class="kw">.box-a</span> { <span class="prop">margin-bottom</span>: <span class="val">40px</span>; }
+<span class="kw">.box-b</span> { <span class="prop">margin-top</span>:    <span class="val">20px</span>; }
+
+<span class="cmt">/* You might expect: 40 + 20 = 60px gap
+   But the actual gap is: 40px (only the larger one counts!) */</span></pre>
+
+    <div class="callout callout-warn">
+      <strong>⚠ Watch Out</strong>
+      <p>Margin collapse only happens with <strong>top and bottom</strong> margins on block-level elements. <strong>Horizontal (left/right)</strong> margins never collapse. <strong>Padding</strong> never collapses either.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 9 — NEGATIVE MARGIN
+     ══════════════════════════════════════ -->
+<section>
+  <div class="container">
+
+    <div class="section-label">09 — Advanced</div>
+    <h2>Negative Margins</h2>
+    <p>Margins can be <strong>negative</strong> — this pulls elements toward each other, or even outside their parent container. Padding, on the other hand, <strong>cannot</strong> be negative.</p>
+
+    <div class="neg-demo">
+      <div class="neg-a">Box A</div>
+      <div class="neg-b">Box B — overlapping!</div>
+    </div>
+
+<pre><span class="kw">.box-b</span> {
+  <span class="prop">margin-left</span>: <span class="val">-20px</span>;  <span class="cmt">/* pulls Box B 20px to the left */</span>
+}
+
+<span class="cmt">/* Padding cannot be negative — browsers ignore it: */</span>
+<span class="kw">.box</span> {
+  <span class="prop">padding</span>: <span class="val">-10px</span>;  <span class="cmt">/* ❌ Invalid — nothing happens */</span>
+}</pre>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 10 — CHEATSHEET
+     ══════════════════════════════════════ -->
+<section>
+  <div class="container">
+
+    <div class="section-label">10 — Quick Reference</div>
+    <h2>Cheatsheet</h2>
+    <p>Save or bookmark this section — it has everything in one place.</p>
+
+    <div class="cheat-grid">
+      <!-- Margin cheatsheet -->
+      <div class="cheat-card">
+        <h3><span class="badge badge-m">MARGIN</span></h3>
+        <ul class="cheat-list">
+          <li>margin: 20px; <span>all sides</span></li>
+          <li>margin-top: 10px; <span>top only</span></li>
+          <li>margin-right: 10px; <span>right only</span></li>
+          <li>margin-bottom: 10px; <span>bottom only</span></li>
+          <li>margin-left: 10px; <span>left only</span></li>
+          <li>margin: 0 auto; <span>center block</span></li>
+          <li>margin: 10px 20px; <span>v | h</span></li>
+          <li>margin: -10px; <span>negative ✅ ok!</span></li>
+        </ul>
+      </div>
+
+      <!-- Padding cheatsheet -->
+      <div class="cheat-card">
+        <h3><span class="badge badge-p">PADDING</span></h3>
+        <ul class="cheat-list">
+          <li>padding: 20px; <span>all sides</span></li>
+          <li>padding-top: 10px; <span>top only</span></li>
+          <li>padding-right: 10px; <span>right only</span></li>
+          <li>padding-bottom: 10px; <span>bottom only</span></li>
+          <li>padding-left: 10px; <span>left only</span></li>
+          <li>padding: 10px 20px; <span>v | h</span></li>
+          <li>padding: 0; <span>remove all</span></li>
+          <li>padding: -10px; <span>negative ❌ invalid</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top: 28px;">
+      <strong>📋 Key Differences at a Glance</strong>
+      <p>
+        <strong style="color:#e8435a;">Margin</strong> — outside the border · transparent · can be negative · can collapse vertically · use <code>auto</code> for centering<br>
+        <strong style="color:#16a34a;">Padding</strong> — inside the border · fills with background colour · always positive · never collapses
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════ -->
+<footer>
+  Built with pure <strong>HTML &amp; CSS</strong> — No libraries, no JavaScript. Happy coding! 🎨
+</footer>
+
+</body>
+</html>
