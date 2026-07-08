@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+/* .para{
+    background: blueviolet;
+    width: 500px;
+    height: 200px;
+    margin: 10px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    /* padding: 10px; */
+
+
+/* .mara{
+    background: blueviolet;
+    width: 500px;
+    height: 200px;
+    margin: 20px;
+    padding: 30px;
+    text-align: center;
+
+}
+.sara{
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    background: tomato;
+}
+.gara{
+    margin: auto;
+    padding: auto;
+   width: 100%;
+}
+.dara{
+    margin: 20px;
+    padding: 20px;
+    background: tomato;
+    width: auto;
+    max-width: 1920px;
+} */
+
+.moon{
+    background: tomato;
+    width: 24%;
+    margin: 20PX;
+    padding: 20px;
+    border: 20px solid blueviolet;
+    float: left;
+}
